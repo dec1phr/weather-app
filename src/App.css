@@ -1,0 +1,342 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500&display=swap');
+
+/* Body Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+  cursor: url('https://cdn.jsdelivr.net/gh/creativeatwork/animated-cursor/cursors/cursor-1.png'), auto;
+  animation: backgroundAnimation 20s ease-in-out infinite;
+  background: linear-gradient(45deg, #ff7f50, #ff4500);
+  background-size: 400% 400%;
+  transition: background 1s ease-out;
+}
+
+/* Title Section */
+.title {
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: 700;
+  color: white;
+  margin-top: 50px;
+  animation: fadeInUp 2s ease-out, colorChange 5s infinite alternate;
+}
+
+/* Search Box Styling */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding: 10px;
+  animation: slideInFromLeft 1s ease-out, shakeText 1s infinite;
+}
+
+.search-box input {
+  padding: 15px 20px;
+  font-size: 1.5em;
+  width: 350px;
+  border: 2px solid #ff7f50;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: bounceIn 2s ease-out;
+}
+
+.search-box input:focus {
+  border-color: #ff4500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-box button {
+  padding: 15px 20px;
+  background-color: #ff4500;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 2s ease-out;
+}
+
+.search-box button:hover {
+  background-color: #ff6347;
+  transform: scale(1.05);
+}
+
+/* Error Message */
+.error {
+  color: red;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+  animation: shake 0.5s ease-in-out, flash 1s infinite;
+}
+
+/* Weather Information */
+.weather-info {
+  text-align: center;
+  margin-top: 40px;
+  animation: fadeIn 2s ease-in-out, bounceIn 1s ease-out;
+}
+
+.current-weather {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  margin: 30px auto;
+  animation: slideInFromBottom 1.5s ease-out;
+}
+
+.current-weather h2 {
+  font-size: 2.2em;
+  color: #333;
+  animation: textSlideIn 2s ease-out;
+}
+
+.current-weather p {
+  font-size: 1.3em;
+  margin-top: 10px;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.current-weather img {
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+}
+
+.multi-day-forecast {
+  margin-top: 60px;
+}
+
+.days-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: slideInFromRight 1s ease-out;
+}
+
+.day-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 140px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 30px;
+  animation: bounceIn 2s ease-out;
+}
+
+.day-card:hover {
+  transform: translateY(-10px);
+  background-color: #ff7f50;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.day-card.active {
+  background-color: #ff4500;
+  color: white;
+}
+
+.day-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.day-card h4 {
+  font-size: 1.3em;
+  margin-top: 10px;
+}
+
+.day-card p {
+  font-size: 1.2em;
+  margin-top: 8px;
+}
+
+/* Hourly Forecast */
+.hourly-forecast {
+  margin-top: 60px;
+}
+
+.hourly-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.hourly-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+  text-align: center;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: bounceIn 2s ease-out;
+}
+
+.hourly-card:hover {
+  transform: translateY(-5px);
+  background-color: #ff6347;
+  animation: pulse 1.5s infinite;
+}
+
+.hourly-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.hourly-card h4 {
+  font-size: 1.3em;
+  margin-top: 10px;
+}
+
+.hourly-card p {
+  font-size: 1.2em;
+  margin-top: 8px;
+}
+
+/* Enhanced Background Animation */
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(45deg, #ff7f50, #ff4500);
+  }
+  25% {
+    background: linear-gradient(45deg, #ff6347, #f0c6b6);
+  }
+  50% {
+    background: linear-gradient(45deg, #ff7f50, #f4a261);
+  }
+  75% {
+    background: linear-gradient(45deg, #ff6347, #ffb6c1);
+  }
+  100% {
+    background: linear-gradient(45deg, #ff7f50, #ff4500);
+  }
+}
+
+/* Headline Animations */
+@keyframes textSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-10px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    background-color: #ff6347;
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: #ff7f50;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #ff6347;
+  }
+}
+
+/* Flash Animation */
+@keyframes flash {
+  0% {
+    color: red;
+  }
+  50% {
+    color: #ff4500;
+  }
+  100% {
+    color: red;
+  }
+}
